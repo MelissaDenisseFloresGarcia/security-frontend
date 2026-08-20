@@ -1,17 +1,16 @@
-
 # Security API Frontend
 
-## Descripción
+## Description
 
-Este proyecto corresponde al frontend de una aplicación web desarrollada para interactuar con una API REST segura.
+This project is the frontend interface of a web application developed to interact with a secure REST API.
 
-La interfaz permite realizar solicitudes al backend mediante métodos HTTP y visualizar las respuestas obtenidas, mostrando información sobre el método utilizado, endpoint consultado, código de respuesta y datos recibidos.
+The interface allows users to send HTTP requests to the backend and visualize the responses received, including the request method, endpoint, HTTP status code, and returned data.
 
-El objetivo del proyecto es demostrar la comunicación entre una interfaz web y una API protegida mediante autenticación por API Key.
+The main purpose of this project is to demonstrate client-server communication and API authentication using an API Key mechanism.
 
 ---
 
-## Tecnologías utilizadas
+## Technologies Used
 
 - HTML5
 - CSS3
@@ -20,15 +19,15 @@ El objetivo del proyecto es demostrar la comunicación entre una interfaz web y 
 
 ---
 
-## Funcionalidades
+## Features
 
-- Consumo de endpoints del backend.
-- Envío de solicitudes HTTP.
-- Visualización de respuestas de la API.
-- Manejo de códigos de estado HTTP.
-- Comunicación con API mediante una clave de autenticación.
+- Communication with the backend REST API.
+- HTTP request handling.
+- API response visualization.
+- Display of HTTP status codes.
+- API Key authentication support.
+- User-friendly interface for testing API endpoints.
 
 ---
 
-## Estructura del proyecto
-
+## Project Structure
