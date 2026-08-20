@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security API Exercise</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Security API Exercise</h1>
+
+        <div class="buttons">
+
+            <button onclick="checkHealth()">
+                Health Check
+            </button>
+
+            <button onclick="getData()">
+                Get Protected Data
+            </button>
+
+            <button onclick="sendPost()">
+                Send POST Request
+            </button>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <h2>Request Information</h2>
+
+            <p>
+                <strong>Method:</strong>
+                <span id="requestMethod">-</span>
+            </p>
+
+            <p>
+                <strong>Endpoint:</strong>
+                <span id="requestEndpoint">-</span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                <span id="responseStatus">-</span>
+            </p>
+
+        </div>
+
+
+        <div class="response-card">
+
+            <h2>Response</h2>
+
+            <pre id="response">
+Waiting for request...
+            </pre>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
