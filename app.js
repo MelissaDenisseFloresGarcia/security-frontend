@@ -1,6 +1,3 @@
-const API_URL = "http://localhost:3000";
-const API_KEY = "my-secret-key";
-
 const responseBox = document.getElementById("response");
 const responseStatus = document.getElementById("responseStatus");
 const requestMethod = document.getElementById("requestMethod");
@@ -58,7 +55,7 @@ async function checkHealth() {
     try {
 
         const response =
-            await fetch(`${API_URL}/health`);
+            await fetch("/health");
 
         const data =
             await response.json();
@@ -93,15 +90,7 @@ async function getData() {
     try {
 
         const response =
-            await fetch(`${API_URL}/api/data`, {
-
-                method: "GET",
-
-                headers: {
-                    "x-api-key": API_KEY
-                }
-
-            });
+            await fetch("/api/data");
 
         const data =
             await response.json();
@@ -136,12 +125,11 @@ async function sendPost() {
     try {
 
         const response =
-            await fetch(`${API_URL}/api/data`, {
+            await fetch("/api/data", {
 
                 method: "POST",
 
                 headers: {
-                    "x-api-key": API_KEY,
                     "Content-Type": "application/json"
                 },
 
