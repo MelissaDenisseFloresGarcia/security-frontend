@@ -2,6 +2,8 @@ server {
     listen 80;
     server_name localhost;
 
+    access_log /var/log/nginx/http.log combined;
+
     # Servir archivos estáticos del frontend
     location / {
         root /usr/share/nginx/html;
