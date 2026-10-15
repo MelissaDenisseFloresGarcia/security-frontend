@@ -2,16 +2,25 @@ server {
     listen 80;
     server_name localhost;
 
+    # HTTP security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+    add_header X-Permitted-Cross-Domain-Policies "none" always;
+    add_header Cross-Origin-Opener-Policy "same-origin" always;
+    add_header Cross-Origin-Resource-Policy "same-origin" always;
+
     access_log /var/log/nginx/http.log combined;
 
-    # Servir archivos estáticos del frontend
+    # Servir archivos est├íticos del frontend
     location / {
         root /usr/share/nginx/html;
         index index.html;
         try_files $uri $uri/ /index.html;
     }
 
-    # Endpoint público de health check
+    # Endpoint p├║blico de health check
     location /health {
         proxy_pass ${API_UPSTREAM}/health;
         proxy_http_version 1.1;
@@ -21,12 +30,12 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # Endpoints de API protegidos con inyección de API Key
+    # Endpoints de API protegidos con inyecci├│n de API Key
     location /api/ {
         proxy_pass ${API_UPSTREAM}/api/;
         proxy_http_version 1.1;
 
-        # Inyección segura de la API Key del lado del servidor
+        # Inyecci├│n segura de la API Key del lado del servidor
         proxy_set_header x-api-key "${API_KEY}";
 
         proxy_set_header Host $host;
