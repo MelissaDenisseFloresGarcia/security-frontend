@@ -1,0 +1,19 @@
+﻿FRONTEND LOCAL SECURITY SCAN
+
+Target: http://127.0.0.1:5173
+Scanner: Nuclei v3.11.1
+Templates loaded: 6607
+Reported findings: 0
+Scan status: Completed
+
+Local service verification:
+Frontend port 5173: HTTP 200
+Backend port 3000: HTTP 200
+LDAP HTTP port 3001: HTTP 404
+LDAP HTTPS port 636: HTTP 404
+
+Notes:
+Ports 9780 and 4040 were referenced by specific Nuclei templates.
+These ports are not part of the main frontend service.
+Connections to these auxiliary ports were refused.
+The target frontend at 127.0.0.1:5173 was responsive.
