@@ -13,14 +13,14 @@ server {
 
     access_log /var/log/nginx/http.log combined;
 
-    # Servir archivos est├íticos del frontend
+    # Serve static frontend files
     location / {
         root /usr/share/nginx/html;
         index index.html;
         try_files $uri $uri/ /index.html;
     }
 
-    # Endpoint p├║blico de health check
+    # Public health check endpoint
     location /health {
         proxy_pass ${API_UPSTREAM}/health;
         proxy_http_version 1.1;
@@ -30,12 +30,12 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # Endpoints de API protegidos con inyecci├│n de API Key
+    # Protected API endpoints with API key injection
     location /api/ {
         proxy_pass ${API_UPSTREAM}/api/;
         proxy_http_version 1.1;
 
-        # Inyecci├│n segura de la API Key del lado del servidor
+        # Inject API key on the server side
         proxy_set_header x-api-key "${API_KEY}";
 
         proxy_set_header Host $host;
