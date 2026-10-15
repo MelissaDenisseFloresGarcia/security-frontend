@@ -1,0 +1,50 @@
+FINAL SECURITY VERIFICATION
+Date: 2026-10-14 22:50:24
+
+FRONTEND SECURITY HEADERS
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Thu, 15 Oct 2026 04:50:24 GMT
+Content-Type: text/html
+Content-Length: 1433
+Last-Modified: Thu, 20 Aug 2026 16:07:54 GMT
+Connection: keep-alive
+ETag: "6a87265a-599"
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+X-Permitted-Cross-Domain-Policies: none
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Accept-Ranges: bytes
+
+
+BACKEND HEALTH CHECK
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 145
+Date: Thu, 15 Oct 2026 04:50:24 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /health</pre>
+</body>
+</html>
+
+LDAP HTTP CONNECTIVITY
+True
+
+LDAP HTTPS CONNECTIVITY
+True
